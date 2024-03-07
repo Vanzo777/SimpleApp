@@ -9,11 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let text = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.addSubview(text)
+        view.backgroundColor = .systemBackground
+        text.text = "Hello, Swift!"
+        text.font = .systemFont(ofSize: 40, weight: .semibold)
+        text.textColor = .systemCyan
+        text.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            text.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            text.centerYAnchor.constraint(equalTo:view.centerYAnchor)
+        ])
+        
     }
 
 
 }
 
+#Preview(traits: .portrait, body: {
+    ViewController()
+})
